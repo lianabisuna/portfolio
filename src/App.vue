@@ -45,4 +45,29 @@
   .text-medium {
     font-size: 65px;
   }
+
+  .cursor-pointer:hover {
+    cursor: pointer;
+  }
+
+  .elevate {
+    top: -10px;
+  }
+
+  .d-green {
+    color: #8dc63f;
+  }
+
+  .d-pink {
+    color: #fab7ae;
+  }
+
+  .d-purple {
+    color: #8560a8;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
 </style>
