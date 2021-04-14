@@ -33,17 +33,46 @@
 </script>
 
 <style lang="scss">
+  $app-font-title: 'Sequel Sans Bold Body';
+  $app-font-regular: 'Sequel Sans Roman Body';
+
+  @font-face {
+    font-family: Sequel Sans Bold Body;
+    src: url('./assets/font/Sequel Sans Bold Body.ttf') format("truetype");
+  }
+
+  @font-face {
+    font-family: Sequel Sans Roman Body;
+    src: url('./assets/font/Sequel Sans Roman Body.ttf') format("truetype");
+  }
+
   #app {
     color: white;
-    background-color: black;
+    background: black;
+    font-family: $app-font-regular;
   }
 
   .text-large {
-    font-size: 100px;
+    font-size: 4.5em;
+    font-family: $app-font-title;
   }
 
   .text-medium {
-    font-size: 65px;
+    font-size: 3em;
+    letter-spacing: 2px;
+    font-family: $app-font-title;
+  }
+
+  .text-70 {
+    font-size: 70%;
+  }
+
+  .text-40 {
+    font-size: 60%;
+  }
+
+  .nowrap {
+    white-space: nowrap ;
   }
 
   .cursor-pointer:hover {

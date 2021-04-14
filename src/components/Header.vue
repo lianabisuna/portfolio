@@ -6,6 +6,7 @@
     dark
     color="transparent"
     class="wrapper"
+    @click="toggle=!toggle"
   >
     <div
       v-if="showLogo"
@@ -36,6 +37,13 @@
 
     props: {
       showLogo: { type: Boolean, default: false }
+    },
+
+    computed: {
+      toggle: {
+        get() { return this.$store.getters['main/toggle'] },
+        set(val) { this.$store.commit('main/setToggle', val) }
+      }
     }
   }
 </script>

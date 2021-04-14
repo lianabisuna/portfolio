@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @click="toggle=!toggle">
     <v-footer
       v-if="float"
       fixed
@@ -28,6 +28,13 @@
 
     props: {
       float: { type: Boolean, default: false }
+    },
+
+    computed: {
+      toggle: {
+        get() { return this.$store.getters['main/toggle'] },
+        set(val) { this.$store.commit('main/setToggle', val) }
+      }
     }
   }
 </script>
