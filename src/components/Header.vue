@@ -3,7 +3,7 @@
     fixed
     flat
     dark
-    class="wrapper"
+    :class="{ 'mx-1':sm, 'wrapper':lg }"
     color="transparent"
     @click="toggle=!toggle"
     v-scroll.parent="scrollListener"

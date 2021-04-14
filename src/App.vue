@@ -113,6 +113,10 @@
     background-size: cover;
   }
 
+  .paragraph-big {
+    font-size: 20px;
+  }
+
   .paragraph {
     font-size: 20px;
   }
