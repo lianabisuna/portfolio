@@ -99,4 +99,38 @@
     text-decoration: none !important;
     color: inherit !important;
   }
+
+  .section {
+    max-width: 700px;
+    margin: 10% auto;
+  }
+
+  .bg-contain {
+    background-size: contain;
+  }
+
+  .bg-cover {
+    background-size: cover;
+  }
+
+  .paragraph {
+    font-size: 20px;
+  }
+
+  .paragraph-1 {
+    font-size: 21px;
+    font-weight: 600;
+  }
+
+  .paragraph-2 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .paragraph-3 {
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  
 </style>

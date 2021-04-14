@@ -16,7 +16,7 @@
       </v-btn>
     </v-footer>
 
-    <v-footer v-else>
+    <v-footer v-else dark color="transparent">
       <h1>Footer</h1>
     </v-footer>
   </div>
