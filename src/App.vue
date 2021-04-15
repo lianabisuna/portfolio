@@ -3,7 +3,10 @@
     <page-header :show-logo="!home"></page-header>
     
     <v-main>
-      <router-view></router-view>
+      <router-view>
+        <pagination slot="pagination"></pagination>
+        <contact-link slot="link"></contact-link>
+      </router-view>
     </v-main>
 
     <page-footer :float="home"></page-footer>
@@ -13,13 +16,17 @@
 <script>
   import PageFooter from './components/Footer';
   import PageHeader from './components/Header';
+  import Pagination from './components/Pagination';
+  import ContactLink from './components/ContactLink';
 
   export default {
     name: 'App',
 
     components: {
       PageFooter,
-      PageHeader
+      PageHeader,
+      Pagination,
+      ContactLink
     },
 
     computed: {
@@ -135,6 +142,43 @@
     font-size: 23px;
     font-weight: 600;
   }
-
   
+  // Pulse animation
+  .pulse {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(255,255,255, 0.1);
+    box-shadow: 0 0 0 rgba(255,255,255, 0.4);
+    animation: pulse 2s infinite;
+  }
+
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+      box-shadow: 0 0 0 0 rgba(255,255,255, 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+      box-shadow: 0 0 0 10px rgba(255,255,255, 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+      box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+    }
+  }
 </style>

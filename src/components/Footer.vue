@@ -1,72 +1,71 @@
 <template>
   <div @click="toggle=!toggle">
     <v-footer
-      v-if="float"
-      fixed
-      color="transparent"
       dark
+      :fixed="float||target"
       height="100"
-      style="padding-left: 10%; padding-right: 10%;"
-    >
-      <v-btn
-        icon
-        x-large
-      >
-        <v-icon size="30">mdi-web</v-icon>
-      </v-btn>
-    </v-footer>
-
-    <v-footer
-      v-else
-      :class="{ 'mx-1':sm, 'wrapper':lg }"
-      height="250"
       color="transparent"
+      :class="{ 'mx-1':sm, 'wrapper':lg }"
+      v-scroll.parent="scrollListener"
     >
-      <v-card
-        dark
-        flat
-        color="transparent"
-        width="100%"
-        class="text-center paragraph-big"
-      >
-        <v-card-text>
-          <a
-            v-for="icon in icons"
-            :key="icon.name"
-            :href="icon.link"
-            target="_blank"
+      <v-row no-gutters align="center">
+        <v-col cols="4">
+          <v-btn
+            v-if="float||target"
+            icon
+            x-large
           >
-            <v-btn
-              x-large
-              icon
+            <v-icon size="30">mdi-web</v-icon>
+          </v-btn>
+
+          <h4 v-else class="text-uppercase">
+            <router-link
+              v-for="(icon,key) in icons"
+              :key="key"
+              :to="icon.link"
+              :class="[ key+1!==icons.length?'mr-2':'' ]"
             >
-              <v-icon :size="icon.size">{{ icon.name }}</v-icon>
-            </v-btn>
-          </a>
-        </v-card-text>
+              {{ icon.name }}
+            </router-link>
+          </h4>
+        </v-col>
 
-        <v-card-text class="white--text">
-          <span class="text-uppercase">LET'S TALK @ </span>
-          <a href="mailto:lianabisuna@gmail.com" class="text-decoration-underline">lianabisuna@gmail.com</a>
-        </v-card-text>
+        <v-col cols="4" class="text-center">
+          <v-btn
+            v-if="!target&&!float"
+            icon
+            x-large
+            @click="scrollToTop"
+          >
+            <v-icon>mdi-chevron-up</v-icon>
+          </v-btn>
+        </v-col>
 
-        <v-card-text class="white--text text-uppercase">
-          Designed & Built by <span class="font-weight-bold">Liana Bisuña</span>
-        </v-card-text>
-      </v-card>
+        <v-col cols="4" class="text-end">
+          <h4 v-if="!target&&!float">lianabisuna@gmail.com</h4>
+          <h4 v-if="!target&&!float">DESIGNED & CREATED BY LIANA</h4>
+        </v-col>
+      </v-row>
     </v-footer>
   </div>
 </template>
 
 <script>
+  import behaviorMixin from '@/mixins/behavior';
+
   export default {
     name: 'Footer',
 
+    mixins: [
+      behaviorMixin
+    ],
+
     data: () => ({
+      target: true,
       icons: [
-        { name: 'mdi-github', link: 'https://github.com/cunejoe', size: '30' },
-        { name: 'mdi-linkedin', link: 'https://linkedin.com/in/lianabisuna', size: '33' },
-        { name: 'mdi-instagram', link: 'https://www.instagram.com/codestring', size: '30' }
+        { name: 'git', link: 'https://github.com/cunejoe' },
+        { name: 'in', link: 'https://linkedin.com/in/lianabisuna' },
+        { name: 'ig', link: 'https://www.instagram.com/codestring' }
       ],
     }),
 
@@ -78,6 +77,35 @@
       toggle: {
         get() { return this.$store.getters['main/toggle'] },
         set(val) { this.$store.commit('main/setToggle', val) }
+      }
+    },
+
+    methods: {
+      scrollListener() {
+        /* user has scrolled to bottom */
+				// if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+				// 	this.bottom = true;
+        //   return; 
+				// }
+
+        // this.bottom = false;
+
+        // return;
+
+        /* user has scrolled on specific div */
+        var elementTarget = document.getElementById("contact-link");
+        var target = elementTarget.offsetTop + elementTarget.offsetHeight;
+        var targetHeight = target - (target/2);
+        var scrollHeight = window.scrollY
+
+        if (targetHeight >= scrollHeight) {
+          this.target = true;
+          return;
+        }
+
+        this.target = false
+
+        return;
       }
     }
   }
