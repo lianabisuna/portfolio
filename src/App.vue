@@ -4,8 +4,16 @@
     
     <v-main>
       <router-view>
-        <pagination slot="pagination"></pagination>
-        <contact-link slot="link"></contact-link>
+        <pagination
+          v-if="!home"
+          slot="pagination"
+        ></pagination>
+        <contact-link
+          v-if="!home"
+          slot="link"
+          :background="link.background"
+          :number="link.number"
+        ></contact-link>
       </router-view>
     </v-main>
 
@@ -30,12 +38,15 @@
     },
 
     computed: {
-      home() { return this.$route.name == 'Home' }
-    },
-
-    data: () => ({
-      //
-    }),
+      home() { return this.$route.name == 'Home' },
+      link() {
+        var number = Math.ceil(Math.random()*2);
+        return {
+          background: number==1?true:false,
+          number: number
+        }
+      }
+    }
   };
 </script>
 
@@ -59,6 +70,21 @@
     font-family: $app-font-regular;
   }
 
+  .title-large {
+    font-size: 3.5em;
+    font-family: $app-font-title;
+  }
+
+  .title-medium {
+    font-size: 2.5em;
+    font-family: $app-font-title;
+  }
+
+  .title-small {
+    font-size: 2em;
+    font-family: $app-font-title;
+  }
+
   .text-large {
     font-size: 4.5em;
     font-family: $app-font-title;
@@ -76,6 +102,10 @@
 
   .text-40 {
     font-size: 60%;
+  }
+
+  .letter-spacing-3 {
+    letter-spacing: 3px;
   }
 
   .nowrap {
@@ -180,5 +210,12 @@
       -moz-box-shadow: 0 0 0 0 rgba(255,255,255, 0);
       box-shadow: 0 0 0 0 rgba(255,255,255, 0);
     }
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #689727, #a65f56);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>

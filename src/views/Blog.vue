@@ -1,6 +1,12 @@
 <template>
   <div>
-    <h1>Blog</h1>
+    <div :class="[ 'section', { 'mx-5':sm } ]" style="height: 900px;">
+      <h1>Blog</h1>
+    </div>
+
+    <slot name="pagination"></slot>
+
+    <slot name="link"></slot>
   </div>
 </template>
 
