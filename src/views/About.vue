@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div id="content"></div>
+    <slot name="content"></slot>
 
     <div :class="[ 'section', { 'mx-5':sm } ]">
       <div class="display-2 font-weight-bold">About</div>
@@ -55,7 +55,7 @@
 
     mixins: [
       behaviorMixin
-    ],
+    ]
   }
 </script>
 

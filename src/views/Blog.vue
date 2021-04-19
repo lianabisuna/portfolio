@@ -1,7 +1,28 @@
 <template>
   <div>
+    <div :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]">
+      <div class="inner-wrapper">
+        <div class="d-flex align-center justify-center">
+          <v-btn
+            absolute
+            icon
+            dark
+            x-large
+            class="pulse scroll-bottom"
+            @click="scrollToId('content')"
+          >
+            <v-icon>mdi-chevron-down</v-icon>
+          </v-btn>
+        </div>
+      </div>
+    </div>
+
+    <slot name="content"></slot>
+
     <div :class="[ 'section', { 'mx-5':sm } ]" style="height: 900px;">
-      <h1>Blog</h1>
+      <div class="display-2 font-weight-bold">Blog</div>
+
+      <div></div>
     </div>
 
     <slot name="pagination"></slot>
@@ -11,11 +32,31 @@
 </template>
 
 <script>
+  import behaviorMixin from '@/mixins/behavior';
+
   export default {
-    name: 'Blog'
+    name: 'Blog',
+
+    mixins: [
+      behaviorMixin
+    ]
   }
 </script>
 
 <style lang="scss" scoped>
+  .banner {
+    height: 100vh;
+    background-image: url('~@/assets/about.png');
+    background-position: center;
+  }
 
+  .inner-wrapper {
+    position: relative;
+    height: 100vh;
+  }
+
+  .scroll-bottom {
+    bottom: 25px;
+    z-index: 999;
+  }
 </style>

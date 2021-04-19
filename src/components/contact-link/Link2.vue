@@ -1,7 +1,7 @@
 <template>
   <v-row class="border-design mx-auto">
     <v-col cols="12" class="text-center">
-      <div class="text-uppercase letter-spacing-3 font-weight-bold grey--text">Need a developer?</div>
+      <div class="title-caption">Need a developer?</div>
     </v-col>
 
     <v-col cols="12">

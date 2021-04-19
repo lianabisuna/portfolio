@@ -3,13 +3,13 @@
     <v-footer
       dark
       :fixed="float||target"
-      height="100"
+      :height="float||target?'100':'150'"
       color="transparent"
       :class="{ 'mx-1':sm, 'wrapper':lg }"
       v-scroll.parent="scrollListener"
     >
       <v-row no-gutters align="center">
-        <v-col cols="4">
+        <v-col cols="10" sm="10" md="4" lg="4" xl="4">
           <v-btn
             v-if="float||target"
             icon
@@ -18,19 +18,20 @@
             <v-icon size="30">mdi-web</v-icon>
           </v-btn>
 
-          <h4 v-else class="text-uppercase">
-            <router-link
+          <h4 v-else :class="[ 'text-uppercase', { 'text-90':sm } ]">
+            <a
               v-for="(icon,key) in icons"
               :key="key"
-              :to="icon.link"
+              :href="icon.link"
               :class="[ key+1!==icons.length?'mr-2':'' ]"
+              target="_blank"
             >
               {{ icon.name }}
-            </router-link>
+            </a>
           </h4>
         </v-col>
 
-        <v-col cols="4" class="text-center">
+        <v-col cols="2" sm="2" md="4" lg="4" xl="4" :class="[ { 'text-center':lg, 'text-end':sm } ]">
           <v-btn
             v-if="!target&&!float"
             icon
@@ -41,9 +42,16 @@
           </v-btn>
         </v-col>
 
-        <v-col cols="4" class="text-end">
-          <h4 v-if="!target&&!float">lianabisuna@gmail.com</h4>
-          <h4 v-if="!target&&!float">DESIGNED & CREATED BY LIANA</h4>
+        <v-col cols="12" sm="4" md="4" lg="4" xl="4" :class="[ { 'text-end':lg, 'text-center':sm } ]">
+          <a :href="`mailto:${email}`">
+            <h4 v-if="!target&&!float">lianabisuna@gmail.com</h4>
+          </a>
+          <div
+            v-if="!target&&!float"
+            class="text-caption"
+          >
+            {{ new Date().getFullYear() }} &copy; DESIGNED & CREATED BY LIANA BISUÑA
+          </div>
         </v-col>
       </v-row>
     </v-footer>
@@ -61,11 +69,12 @@
     ],
 
     data: () => ({
+      email: 'lianabisuna@gmail.com',
       target: true,
       icons: [
-        { name: 'git', link: 'https://github.com/cunejoe' },
-        { name: 'in', link: 'https://linkedin.com/in/lianabisuna' },
-        { name: 'ig', link: 'https://www.instagram.com/codestring' }
+        { name: 'github', link: 'https://github.com/cunejoe' },
+        { name: 'linkedin', link: 'https://linkedin.com/in/lianabisuna' },
+        { name: 'instagram', link: 'https://www.instagram.com/codestring' }
       ],
     }),
 

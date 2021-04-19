@@ -4,6 +4,7 @@
     
     <v-main>
       <router-view>
+        <div slot="content" id="content"></div>
         <pagination
           v-if="!home"
           slot="pagination"
@@ -85,6 +86,13 @@
     font-family: $app-font-title;
   }
 
+  .title-caption {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: gray;
+  }
+
   .text-large {
     font-size: 4.5em;
     font-family: $app-font-title;
@@ -102,6 +110,14 @@
 
   .text-40 {
     font-size: 60%;
+  }
+
+  .text-40 {
+    font-size: 60%;
+  }
+
+  .text-90 {
+    font-size: 90%;
   }
 
   .letter-spacing-3 {
@@ -217,5 +233,9 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .rotate-90 {
+    transform: rotate(90deg);
   }
 </style>
