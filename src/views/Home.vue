@@ -17,12 +17,12 @@
                 key+1!==titles.length&&(md||lg)?'mr-5':'',
                 hover?`d-${title.color}`:'',
                 toggle&&(sm||md)?`d-${title.color}`:'',
-                { 'text-70 d-block':sm, 'd-inline-block':lg, 'd-inline-block':md }
+                { 'text-70 d-block':sm, 'd-inline-block':lg, 'd-inline-block':md },
+                title.text=='liana'&&(!hover&&!toggle)?'text-outline black--text':''
               ]"
               @mouseenter="toggle=lg?true:toggle"
               @mouseleave="toggle=lg?false:toggle"
             >
-              <!-- {{ hover?title.link:title.text }} -->
               {{ titleText(hover, title.link, title.text) }}
             </div>
           </router-link>
@@ -90,25 +90,6 @@
 <style scoped>
   .home {
     height: 100vh;
-  }
-
-  /* Float */
-  .hvr-float {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
-  }
-  .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
-    -webkit-transform: translateY(-8px);
-    transform: translateY(-8px);
   }
 
   .subtitle {

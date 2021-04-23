@@ -52,17 +52,17 @@
 </script>
 
 <style lang="scss">
-  $app-font-title: 'Sequel Sans Bold Body';
-  $app-font-regular: 'Sequel Sans Roman Body';
+  $app-font-title: 'Neue Haas Grotesque Display Bold';
+  $app-font-regular: 'Neue Haas Grotesque Text Medium';
 
   @font-face {
-    font-family: Sequel Sans Bold Body;
-    src: url('./assets/font/Sequel Sans Bold Body.ttf') format("truetype");
+    font-family: Neue Haas Grotesque Text Medium;
+    src: url('./assets/font/NHaasGroteskTXPro-65Md.otf') format("opentype");
   }
 
   @font-face {
-    font-family: Sequel Sans Roman Body;
-    src: url('./assets/font/Sequel Sans Roman Body.ttf') format("truetype");
+    font-family: Neue Haas Grotesque Display Bold;
+    src: url('./assets/font/NHaasGroteskDSPro-75Bd.otf') format("opentype");
   }
 
   #app {
@@ -90,12 +90,23 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: bold;
-    color: gray;
+    color: #92959A;
+  }
+
+  .title-mini {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    color: #92959A;
   }
 
   .text-large {
     font-size: 4.5em;
     font-family: $app-font-title;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 2px white;
   }
 
   .text-medium {
@@ -122,6 +133,10 @@
 
   .letter-spacing-3 {
     letter-spacing: 3px;
+  }
+
+  .line-height-1 {
+    line-height: 1.6;
   }
 
   .nowrap {
@@ -237,5 +252,24 @@
 
   .rotate-90 {
     transform: rotate(90deg);
+  }
+
+  /* Float */
+  .hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
   }
 </style>
