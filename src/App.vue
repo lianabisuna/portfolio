@@ -173,6 +173,10 @@
     margin: 10% auto;
   }
 
+  .mb-section {
+    margin-bottom: 20vh;
+  }
+
   .bg-contain {
     background-size: contain;
   }

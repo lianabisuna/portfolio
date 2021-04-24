@@ -3,7 +3,7 @@
     <div :class="[ 'section', { 'mx-5':sm } ]">
       <v-row>
         <v-col cols="6" class="text-start">
-          <router-link v-if="prev" :to="prev.link">
+          <router-link v-if="Object.keys(prev).length !== 0" :to="prev.link">
             <div>← <span class="bottom-line-border text-capitalize">{{ prev.name }}</span></div>
           </router-link>
         </v-col>
@@ -11,7 +11,7 @@
         <v-spacer></v-spacer>
 
         <v-col cols="6" class="text-end">
-          <router-link v-if="next" :to="next.link">
+          <router-link v-if="Object.keys(next).length !== 0" :to="next.link">
             <div><span class="bottom-line-border text-capitalize">{{ next.name }}</span> →</div>
           </router-link>
         </v-col>

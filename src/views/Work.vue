@@ -126,12 +126,12 @@
           image: 'vector',
           link: ''
         },
-        {
-          name: 'card',
-          year: '2018-2021',
-          image: 'card',
-          link: ''
-        }
+        // {
+        //   name: 'card',
+        //   year: '2018-2021',
+        //   image: 'card',
+        //   link: ''
+        // }
       ]
     })
   }
