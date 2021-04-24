@@ -38,6 +38,18 @@
       <h1 class="text-uppercase">Graphic Creation</h1>
       <div class="title-caption mt-2 mb-10">logos, vectors & cards</div>
 
+      <v-row class="mb-10">
+        <v-col
+          cols="12"
+          v-for="project in designs"
+          :key="project.name"
+        >
+          <landscape-card
+            :project="project"
+          ></landscape-card>
+        </v-col>
+      </v-row>
+
       <h1 class="text-uppercase">Featured on Instagram</h1>
       <div class="title-caption mt-2 mb-10">
         follow me 
@@ -45,6 +57,7 @@
           @codestring
         </a>
       </div>
+      
     </div>
 
     <slot name="pagination"></slot>
@@ -55,7 +68,7 @@
 
 <script>
   import behaviorMixin from '@/mixins/behavior';
-  // import LandscapeCard from '@/components/project-card/Landscape';
+  import LandscapeCard from '@/components/project-card/Landscape';
   import PortraitCard from '@/components/project-card/Portrait';
 
   export default {
@@ -66,7 +79,7 @@
     ],
 
     components: {
-      // LandscapeCard,
+      LandscapeCard,
       PortraitCard
     },
 
@@ -98,6 +111,26 @@
           site: 'https://kcard.netlify.app',
           code: '',
           component: ''
+        }
+      ],
+      designs: [
+        {
+          name: 'logo',
+          year: '2018-2021',
+          image: 'logos',
+          link: ''
+        },
+        {
+          name: 'vector',
+          year: '2016',
+          image: 'vector',
+          link: ''
+        },
+        {
+          name: 'card',
+          year: '2018-2021',
+          image: 'card',
+          link: ''
         }
       ]
     })
