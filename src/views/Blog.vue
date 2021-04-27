@@ -13,6 +13,7 @@
             x-large
             class="pulse scroll-bottom"
             @click="scrollToId('content')"
+            style="z-index: 1;"
           >
             <v-icon :color="drk?'white':'black'">mdi-chevron-down</v-icon>
           </v-btn>
@@ -24,6 +25,8 @@
 
     <div :class="[ 'section', { 'mx-5':sm } ]" style="height: 900px;">
       <div class="display-2 font-weight-bold">Blog</div>
+
+      <h2 class="mt-10">—writing soon;</h2>
 
       <div></div>
     </div>

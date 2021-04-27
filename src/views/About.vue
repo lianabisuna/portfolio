@@ -13,6 +13,7 @@
             x-large
             class="pulse scroll-bottom"
             @click="scrollToId('content')"
+            style="z-index: 1;"
           >
             <v-icon :color="drk?'white':'black'">mdi-chevron-down</v-icon>
           </v-btn>

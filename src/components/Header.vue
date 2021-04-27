@@ -15,6 +15,7 @@
       <router-link to="/">
         <v-img
           :src="require(`@/assets/logo-${drk?'light':'dark'}.png`)"
+          alt="logo"
           :width="expand?'100':'50'"
           absolute
           fixed
@@ -24,11 +25,7 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn
-      icon
-    >
-      <v-icon size="30" :color="drk?'white':'black'">mdi-email-outline</v-icon>
-    </v-btn>
+    <contact-form></contact-form>
 
     <page-theme></page-theme>
   </v-app-bar>
@@ -36,6 +33,7 @@
 
 <script>
   import PageTheme from './Theme';
+  import ContactForm from './Contact';
 
   export default {
     name: 'Header',
@@ -45,7 +43,8 @@
     },
 
     components: {
-      PageTheme
+      PageTheme,
+      ContactForm
     },
 
     data: () => ({

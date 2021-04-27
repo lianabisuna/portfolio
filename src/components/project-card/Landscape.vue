@@ -10,6 +10,7 @@
         height="100%"
         width="100%"
         :src="require(`@/assets/project/${project.image}.jpg`)"
+        alt="project"
         bottom
       ></v-img>
 

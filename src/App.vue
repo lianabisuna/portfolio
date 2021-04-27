@@ -155,11 +155,7 @@
   }
 
   .text-40 {
-    font-size: 60%;
-  }
-
-  .text-40 {
-    font-size: 60%;
+    font-size: 40%;
   }
 
   .text-90 {
