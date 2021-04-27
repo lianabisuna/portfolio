@@ -1,5 +1,11 @@
 <template>
-  <div id="contact-link" :class="{ 'background':background }">
+  <div
+    id="contact-link"
+    :class="[
+      drk&&background?'background-dark':'',
+      grn&&background?'background-green':'',
+      pnk&&background?'background-pink':'' ]"
+    >
     <div :class="[ 'section d-flex align-center justify-center', { 'mx-5':sm } ]" style="min-height: 300px;">
       <component :is="component"></component>
     </div>
@@ -32,8 +38,15 @@
 </script>
 
 <style lang="scss" scoped>
-  .background {
+  .background-dark {
     background: linear-gradient(to right, #689727, #eb663e);
-    // background: linear-gradient(to right, #7927b2, #fb3182);
+  }
+
+  .background-green {
+    background: linear-gradient(to right, #22c1c3, #fdbb2d);
+  }
+
+  .background-pink {
+    background: linear-gradient(to right, #7927b2, #fb3182);
   }
 </style>

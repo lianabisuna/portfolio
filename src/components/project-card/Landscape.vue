@@ -20,7 +20,7 @@
           class="align-start justify-start"
         >
           <div class="ma-5">
-            <div class="title-mini">{{ project.year }}</div>
+            <div :class="[ 'title-mini', hover?'white--text':'' ]">{{ project.year }}</div>
 
             <div :class="[ 'line-height-1 text-uppercase', hover?'white--text':'black--text' ]">
               <h2>{{ project.name }}</h2>

@@ -4,7 +4,6 @@
       <v-card
         height="500"
         tile
-        dark
       >
         <v-img
           height="100%"
@@ -20,11 +19,11 @@
             class="align-start justify-start"
           >
             <div class="ma-5">
-              <div class="title-mini">{{ project.year }}</div>
+              <div :class="[ 'title-mini', hover?'white--text':'' ]">{{ project.year }}</div>
 
               <div class="line-height-1">
-                <h2>{{ project.name }}</h2>
-                <h3>{{ project.caption }}</h3>
+                <h2 class="white--text">{{ project.name }}</h2>
+                <h3 class="white--text">{{ project.caption }}</h3>
               </div>
             </div>
 
@@ -38,7 +37,7 @@
                   name="site"
                   prefix="visit"
                   class="mr-3"
-                  color="#92959A"
+                  color="white"
                 ></v-text-button>
               </a>
 
@@ -48,7 +47,7 @@
                   name="code"
                   prefix="view"
                   class="mr-3"
-                  color="#92959A"
+                  color="white"
                 ></v-text-button>
               </a>
 
@@ -56,7 +55,7 @@
                 v-if="project.component"
                 name="more"
                 prefix="learn"
-                color="#92959A"
+                color="white"
               ></v-text-button>
             </div>
           </v-overlay>

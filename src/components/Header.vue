@@ -2,10 +2,9 @@
   <v-app-bar
     fixed
     flat
-    dark
     :class="{ 'mx-1':sm, 'wrapper':lg }"
     color="transparent"
-    @click="toggle=!toggle"
+    @click="toggleOnClick"
     v-scroll.parent="scrollListener"
     :height="expand&&showLogo?'200':'100'"
   >
@@ -15,7 +14,7 @@
     >
       <router-link to="/">
         <v-img
-          src="@/assets/logo.png"
+          :src="require(`@/assets/logo-${drk?'light':'dark'}.png`)"
           :width="expand?'100':'50'"
           absolute
           fixed
@@ -28,23 +27,25 @@
     <v-btn
       icon
     >
-      <v-icon size="30">mdi-email-outline</v-icon>
+      <v-icon size="30" :color="drk?'white':'black'">mdi-email-outline</v-icon>
     </v-btn>
 
-    <v-btn
-      icon
-    >
-      <v-icon size="27">mdi-square</v-icon>
-    </v-btn>
+    <page-theme></page-theme>
   </v-app-bar>
 </template>
 
 <script>
+  import PageTheme from './Theme';
+
   export default {
     name: 'Header',
 
     props: {
       showLogo: { type: Boolean, default: false }
+    },
+
+    components: {
+      PageTheme
     },
 
     data: () => ({
@@ -60,6 +61,10 @@
     },
 
     methods: {
+      toggleOnClick() {
+        if (this.sm)
+          this.toggle = !this.toggle;
+      },
       scrollListener() {
         let app = document.getElementsByTagName('html');
 

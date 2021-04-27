@@ -23,7 +23,3 @@
     name: 'Link1'
   }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -5,12 +5,14 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 /* Mixins */
 import screenMix from './mixins/screen';
+import settingsMix from './mixins/settings';
 /* Autoload Base Components */
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 
 /* Mixins */
 Vue.mixin(screenMix);
+Vue.mixin(settingsMix);
 
 /* Autoload Base Components */
 // first param: destination

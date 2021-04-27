@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]">
+    <div
+      :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]"
+      :style="{ backgroundImage: 'url(' + require(`@/assets/about-${drk?'light':'dark'}.png`) + ')' }"
+    >
       <div class="inner-wrapper">
         <div class="d-flex align-center justify-center">
           <v-btn
@@ -11,7 +14,7 @@
             class="pulse scroll-bottom"
             @click="scrollToId('content')"
           >
-            <v-icon>mdi-chevron-down</v-icon>
+            <v-icon :color="drk?'white':'black'">mdi-chevron-down</v-icon>
           </v-btn>
         </div>
       </div>
@@ -46,7 +49,6 @@
 <style lang="scss" scoped>
   .banner {
     height: 100vh;
-    background-image: url('~@/assets/about.png');
     background-position: center;
   }
 

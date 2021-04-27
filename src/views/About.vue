@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]">
+    <div
+      :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]"
+      :style="{ backgroundImage: 'url(' + require(`@/assets/about-${drk?'light':'dark'}.png`) + ')' }"
+    >
       <div class="inner-wrapper">
         <div class="d-flex align-center justify-center">
           <v-btn
@@ -11,7 +14,7 @@
             class="pulse scroll-bottom"
             @click="scrollToId('content')"
           >
-            <v-icon>mdi-chevron-down</v-icon>
+            <v-icon :color="drk?'white':'black'">mdi-chevron-down</v-icon>
           </v-btn>
         </div>
       </div>
@@ -34,7 +37,7 @@
           <v-hover v-slot="{ hover }">
             <div class="d-flex align-center" style="min-height: 60px;">
               <div v-if="hover" class="text-center">
-                <span class="title-caption mr-3 grey--text">Download</span>
+                <span class="title-caption mr-3" style="color: var(--app-accent-color);">Download</span>
                 <a
                   v-for="(button,key) in buttons"
                   :key="key"
@@ -50,7 +53,7 @@
                 :disabled="hover"
                 tile
                 outlined
-                dark
+                :dark="drk"
                 x-large
               >
                 Resume
@@ -66,7 +69,6 @@
         <h1 class="text-uppercase mb-10">Experience</h1>
 
         <v-card
-          dark
           tile
           flat
           color="transparent"
@@ -171,7 +173,6 @@
 <style lang="scss" scoped>
   .banner {
     height: 100vh;
-    background-image: url('~@/assets/about.png');
     background-position: center;
   }
 

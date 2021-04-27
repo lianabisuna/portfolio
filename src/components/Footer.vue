@@ -1,7 +1,6 @@
 <template>
-  <div @click="toggle=!toggle">
+  <div @click="toggleOnClick">
     <v-footer
-      dark
       :fixed="float||target"
       :height="float||target?'100':'150'"
       color="transparent"
@@ -15,7 +14,7 @@
             icon
             x-large
           >
-            <v-icon size="30">mdi-web</v-icon>
+            <v-icon size="30" :color="drk?'white':'black'">mdi-web</v-icon>
           </v-btn>
 
           <h4 v-else :class="[ 'text-uppercase', { 'text-90':sm } ]">
@@ -38,7 +37,7 @@
             x-large
             @click="scrollToTop"
           >
-            <v-icon>mdi-chevron-up</v-icon>
+            <v-icon :color="drk?'white':'black'">mdi-chevron-up</v-icon>
           </v-btn>
         </v-col>
 
@@ -90,6 +89,10 @@
     },
 
     methods: {
+      toggleOnClick() {
+        if (this.sm)
+          this.toggle = !this.toggle;
+      },
       scrollListener() {
         /* user has scrolled to bottom */
 				// if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {

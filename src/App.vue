@@ -47,11 +47,42 @@
           number: number
         }
       }
+    },
+
+    created() {
+      this.setDefaultTheme();
+    },
+
+    methods: {
+      setDefaultTheme() {
+        var theme = 'dark';
+        if (this.theme) {
+          switch (this.theme) {
+            case 'dark':
+              theme = 'dark';
+              break;
+            case 'green':
+              theme = 'green';
+              break;
+            case 'pink':
+              theme = 'pink';
+              break;
+            default:
+              break;
+          }
+        }
+
+        localStorage.setItem('theme', theme);
+        let htmlElement = document.documentElement;
+        htmlElement.setAttribute('theme', theme);
+      }
     }
   };
 </script>
 
 <style lang="scss">
+  @import './scss/theme';
+
   $app-font-title: 'Neue Haas Grotesque Display Bold';
   $app-font-regular: 'Neue Haas Grotesque Text Medium';
 
@@ -66,8 +97,8 @@
   }
 
   #app {
-    color: white;
-    background: black;
+    color: var(--app-font-color);
+    background: var(--app-background-color);
     font-family: $app-font-regular;
   }
 
@@ -90,29 +121,33 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: bold;
-    color: #92959A;
+    color: var(--app-accent-color);
   }
 
   .title-mini {
     text-transform: uppercase;
     letter-spacing: 4px;
     font-weight: 500;
-    color: #92959A;
+    color: var(--app-accent-color);
   }
 
   .text-large {
     font-size: 4.5em;
     font-family: $app-font-title;
-  }
-
-  .text-outline {
-    -webkit-text-stroke: 2px white;
+    color: var(--text-large-color);
   }
 
   .text-medium {
     font-size: 3em;
     letter-spacing: 2px;
     font-family: $app-font-title;
+    color: var(--text-medium-color);
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: var(--text-stroke-outer-color);
+    color: var(--text-stroke-inner-color);
   }
 
   .text-70 {
@@ -151,18 +186,6 @@
     top: -10px;
   }
 
-  .d-green {
-    color: #8dc63f;
-  }
-
-  .d-pink {
-    color: #fab7ae;
-  }
-
-  .d-purple {
-    color: #8560a8;
-  }
-
   a {
     text-decoration: none !important;
     color: inherit !important;
@@ -187,25 +210,30 @@
 
   .paragraph-big {
     font-size: 20px;
+    color: var(--app-font-color);
   }
 
   .paragraph {
     font-size: 20px;
+    color: var(--app-font-color);
   }
 
   .paragraph-1 {
     font-size: 21px;
     font-weight: 600;
+    color: var(--app-font-color);
   }
 
   .paragraph-2 {
     font-size: 22px;
     font-weight: 600;
+    color: var(--app-font-color);
   }
 
   .paragraph-3 {
     font-size: 23px;
     font-weight: 600;
+    color: var(--app-font-color);
   }
   
   // Pulse animation

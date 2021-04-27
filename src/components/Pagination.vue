@@ -78,6 +78,6 @@
 <style lang="scss" scoped>
   .bottom-line-border {
     padding-bottom: 3px;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid var(--app-font-color);
   }
 </style>

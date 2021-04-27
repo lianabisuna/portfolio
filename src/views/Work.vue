@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]">
+    <div
+      :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]"
+      :style="{ backgroundImage: 'url(' + require(`@/assets/about-${drk?'light':'dark'}.png`) + ')' }"
+    >
       <div class="inner-wrapper">
         <div class="d-flex align-center justify-center">
           <v-btn
@@ -11,7 +14,7 @@
             class="pulse scroll-bottom"
             @click="scrollToId('content')"
           >
-            <v-icon>mdi-chevron-down</v-icon>
+            <v-icon :color="drk?'white':'black'">mdi-chevron-down</v-icon>
           </v-btn>
         </div>
       </div>
@@ -20,42 +23,50 @@
     <slot name="content"></slot>
 
     <div :class="[ 'section', { 'mx-5':sm } ]">
-      <h1 class="text-uppercase">Web Project</h1>
-      <div class="title-caption mt-2 mb-10">templates, sites & apps</div>
+      <div class="mb-section">
+        <h1 class="text-uppercase">Web Project</h1>
+        <div class="title-caption mt-2 mb-10">templates, sites & apps</div>
 
-      <v-row class="mb-10">
-        <v-col
-          cols="12" sm="6" md="6" lg="6" xl="6"
-          v-for="project in projects"
-          :key="project.name"
-        >
-          <portrait-card
-            :project="project"
-          ></portrait-card>
-        </v-col>
-      </v-row>
+        <v-row class="mb-10">
+          <v-col
+            cols="12" sm="6" md="6" lg="6" xl="6"
+            v-for="project in projects"
+            :key="project.name"
+          >
+            <portrait-card
+              :project="project"
+            ></portrait-card>
+          </v-col>
+        </v-row>
+      </div>
 
-      <h1 class="text-uppercase">Graphic Creation</h1>
-      <div class="title-caption mt-2 mb-10">logos, vectors & cards</div>
+      <div class="mb-section">
+        <h1 class="text-uppercase">Graphic Creation</h1>
+        <div class="title-caption mt-2 mb-10">logos, vectors & cards</div>
 
-      <v-row class="mb-10">
-        <v-col
-          cols="12"
-          v-for="project in designs"
-          :key="project.name"
-        >
-          <landscape-card
-            :project="project"
-          ></landscape-card>
-        </v-col>
-      </v-row>
+        <v-row class="mb-10">
+          <v-col
+            cols="12"
+            v-for="project in designs"
+            :key="project.name"
+          >
+            <landscape-card
+              :project="project"
+            ></landscape-card>
+          </v-col>
+        </v-row>
+      </div>
 
-      <h1 class="text-uppercase">Featured on Instagram</h1>
-      <div class="title-caption mt-2 mb-10">
-        follow me 
-        <a href="https://www.instagram.com/codestring" target="_blank" class="white--text">
-          @codestring
-        </a>
+      <div class="mb-section">
+        <h1 class="text-uppercase">Featured on Instagram</h1>
+        <div class="title-caption mt-2 mb-10">
+          follow me 
+          <a href="https://www.instagram.com/codestring" target="_blank" class="white--text">
+            @codestring
+          </a>
+        </div>
+
+        <div style="height: 200px;"></div>
       </div>
       
     </div>
@@ -140,7 +151,6 @@
 <style lang="scss" scoped>
   .banner {
     height: 100vh;
-    background-image: url('~@/assets/about.png');
     background-position: center;
   }
 

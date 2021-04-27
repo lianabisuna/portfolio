@@ -1,0 +1,51 @@
+:root {
+  --app-background-color: #000000;
+  --app-accent-color: #92959A;
+  --app-font-color: #ffffff;
+  --text-large-color: #ffffff;
+  --text-medium-color: #ffffff;
+  --text-stroke-inner-color: #000000;
+  --text-stroke-outer-color: #ffffff;
+  --text-float-a: #8dc63f;
+  --text-float-b: #fab7ae;
+  --text-float-c: #8560a8;
+}
+
+[theme="dark"] {
+  --app-background-color: #000000;
+  --app-accent-color: #92959A;
+  --app-font-color: #ffffff;
+  --text-large-color: #ffffff;
+  --text-medium-color: #ffffff;
+  --text-stroke-inner-color: #000000;
+  --text-stroke-outer-color: #ffffff;
+  --text-float-a: #8dc63f;
+  --text-float-b: #fab7ae;
+  --text-float-c: #8560a8;
+}
+
+[theme="green"] {
+  --app-background-color: #588061;
+  --app-accent-color: #9e9e9e;
+  --app-font-color: #000000;
+  --text-large-color: #f9ad81;
+  --text-medium-color: #143221;
+  --text-stroke-inner-color: #588061;
+  --text-stroke-outer-color: #f9ad81;
+  --text-float-a: #225036;
+  --text-float-b: #225036;
+  --text-float-c: #225036;
+}
+
+[theme="pink"] {
+  --app-background-color: #fab7ae;
+  --app-accent-color: #808080;
+  --app-font-color: #000000;
+  --text-large-color: #1e140a;
+  --text-medium-color: #77a53a;
+  --text-stroke-inner-color: #fab7ae;
+  --text-stroke-outer-color: #1e140a;
+  --text-float-a: #638a30;
+  --text-float-b: #638a30;
+  --text-float-c: #638a30;
+}

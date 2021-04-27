@@ -1,7 +1,7 @@
 <template>
   <div
     class="home d-flex align-center justify-center overflow-y-hidden"
-    @click="toggle=!toggle"
+    @click="toggleOnClick"
   >
     <div>
       <div :class="[ 'text-large text-uppercase', sm?'push-to-top':'' ]">
@@ -15,10 +15,10 @@
               :class="[
                 'cursor-pointer hvr-float text-center',
                 key+1!==titles.length&&(md||lg)?'mr-5':'',
-                hover?`d-${title.color}`:'',
-                toggle&&(sm||md)?`d-${title.color}`:'',
+                hover?`text-float-${title.color}`:'',
+                toggle&&(sm||md)?`text-float-${title.color}`:'',
                 { 'text-70 d-block':sm, 'd-inline-block':lg, 'd-inline-block':md },
-                title.text=='liana'&&(!hover&&!toggle)?'text-outline black--text':''
+                title.text=='liana'&&(!hover&&!toggle)?'text-outline':''
               ]"
               @mouseenter="toggle=lg?true:toggle"
               @mouseleave="toggle=lg?false:toggle"
@@ -52,9 +52,9 @@
         'HTML, CSS & JAVASCRIPT'
       ],
       titles: [
-        { text: 'hello', link: 'work', color: 'green' },
-        { text: "i am", link: 'blog', color: 'pink' },
-        { text: 'liana', link: 'about', color: 'purple' }
+        { text: 'hello', link: 'work', color: 'a' },
+        { text: "i am", link: 'blog', color: 'b' },
+        { text: 'liana', link: 'about', color: 'c' }
       ]
     }),
 
@@ -66,6 +66,10 @@
     },
 
     methods: {
+      toggleOnClick() {
+        if (this.sm)
+          this.toggle = !this.toggle;
+      },
       changeSubtitle() {
         this.subtitle+1 !== this.subtitles.length
           ? this.subtitle++
@@ -101,5 +105,17 @@
 
   .push-to-top {
     margin-top: -50%;
+  }
+
+  .text-float-a {
+    color: var(--text-float-a);
+  }
+
+  .text-float-b {
+    color: var(--text-float-b);
+  }
+
+  .text-float-c {
+    color: var(--text-float-c);
   }
 </style>
