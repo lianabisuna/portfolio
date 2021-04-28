@@ -72,7 +72,7 @@
           }
         }
 
-        localStorage.setItem('theme', theme);
+        this.$store.commit('main/setTheme', theme);
         let htmlElement = document.documentElement;
         htmlElement.setAttribute('theme', theme);
       }
