@@ -6,9 +6,9 @@
   --text-medium-color: #ffffff;
   --text-stroke-inner-color: #000000;
   --text-stroke-outer-color: #ffffff;
-  --text-float-a: #8dc63f;
-  --text-float-b: #fab7ae;
-  --text-float-c: #8560a8;
+  --a-text-float-color: linear-gradient(to right, #689727, #a65f56);
+  --b-text-float-color: linear-gradient(to right, #a65f56, #7927b2);
+  --c-text-float-color: linear-gradient(to right, #7927b2, #fb3182);
 }
 
 [theme="dark"] {
@@ -19,9 +19,9 @@
   --text-medium-color: #ffffff;
   --text-stroke-inner-color: #000000;
   --text-stroke-outer-color: #ffffff;
-  --text-float-a: #8dc63f;
-  --text-float-b: #fab7ae;
-  --text-float-c: #8560a8;
+  --a-text-float-color: linear-gradient(to right, #689727, #fdbb2d);
+  --b-text-float-color: linear-gradient(to right, #fdbb2d, #fb3182);
+  --c-text-float-color: linear-gradient(to right, #fb3182, #7927b2);
 }
 
 [theme="green"] {
@@ -32,9 +32,9 @@
   --text-medium-color: #143221;
   --text-stroke-inner-color: #588061;
   --text-stroke-outer-color: #f9ad81;
-  --text-float-a: #225036;
-  --text-float-b: #225036;
-  --text-float-c: #225036;
+  --a-text-float-color: #f8965e;
+  --b-text-float-color: #f8965e;
+  --c-text-float-color: #f8965e;
 }
 
 [theme="pink"] {
@@ -45,7 +45,7 @@
   --text-medium-color: #77a53a;
   --text-stroke-inner-color: #fab7ae;
   --text-stroke-outer-color: #1e140a;
-  --text-float-a: #638a30;
-  --text-float-b: #638a30;
-  --text-float-c: #638a30;
+  --a-text-float-color: #8560a8;
+  --b-text-float-color: #8560a8;
+  --c-text-float-color: #8560a8;
 }

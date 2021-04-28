@@ -15,8 +15,8 @@
               :class="[
                 'cursor-pointer hvr-float text-center',
                 key+1!==titles.length&&(md||lg)?'mr-5':'',
-                hover?`text-float-${title.color}`:'',
-                toggle&&(sm||md)?`text-float-${title.color}`:'',
+                hover?textFloatColor(title.color):'',
+                toggle&&(sm||md)?textFloatColor(title.color):'',
                 { 'text-70 d-block':sm, 'd-inline-block':lg, 'd-inline-block':md },
                 title.text=='liana'&&(!hover&&!toggle)?'text-outline':''
               ]"
@@ -86,6 +86,9 @@
           return this.toggle?`/${link}`:'/';
         else
           return `/${link}`;
+      },
+      textFloatColor(color) {
+        return this.drk ? `text-gradient-${color}` : `text-float-${color}`;
       }
     }
   }
@@ -108,14 +111,35 @@
   }
 
   .text-float-a {
-    color: var(--text-float-a);
+    color: var(--a-text-float-color);
   }
 
   .text-float-b {
-    color: var(--text-float-b);
+    color: var(--b-text-float-color);
   }
 
   .text-float-c {
-    color: var(--text-float-c);
+    color: var(--c-text-float-color);
+  }
+
+  .text-gradient-a {
+    background: var(--a-text-float-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-b {
+    background: var(--b-text-float-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-c {
+    background: var(--c-text-float-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 </style>
