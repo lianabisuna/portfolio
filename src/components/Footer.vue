@@ -9,13 +9,59 @@
     >
       <v-row no-gutters align="center">
         <v-col cols="10" sm="10" md="4" lg="4" xl="4">
-          <v-btn
+          <v-menu
             v-if="float||target"
-            icon
-            x-large
+            :open-on-hover="lg"
+            v-model="menu"
+            :close-on-content-click="false"
+            :nudge-width="200"
+            top
+            offset-y
+            tile
+            content-class="elevation-0"
           >
-            <v-icon size="30" :color="drk?'white':'black'">mdi-web</v-icon>
-          </v-btn>
+            <template v-slot:activator="{ on, attrs }">
+              <div>
+                <div class="d-flex align-center">
+                  <v-btn
+                    icon
+                    x-large
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon size="30" :color="drk?'white':'black'">mdi-web</v-icon>
+                  </v-btn>
+                  <a
+                    v-if="menu"
+                    href="mailto:lianabisuna@gmail.com"
+                    target="_blank"
+                    v-bind="attrs"
+                    v-on="on"
+                    class="pl-2 paragraph-2"
+                    @click.stop
+                  >
+                    lianabianca@gmail.com
+                  </a>
+                </div>
+              </div>
+            </template>
+
+            <v-list color="transparent" :dense="sm" class="d-inline-block">
+              <v-hover
+                v-slot="{ hover }"
+                v-for="icon in icons"
+                :key="icon.name"
+              >
+                <a :href="icon.link" target="_blank">
+                  <v-list-item>
+                    <v-list-item-content>
+                      <div class="paragraph-2">{{ hover ? icon.name : icon.text }}</div>
+                    </v-list-item-content>
+                  </v-list-item>
+                </a>
+              </v-hover>
+            </v-list>
+          </v-menu>
 
           <h4 v-else :class="[ 'text-uppercase', { 'text-90':sm } ]">
             <a
@@ -71,10 +117,10 @@
       email: 'lianabisuna@gmail.com',
       target: true,
       icons: [
-        { name: 'github', link: 'https://github.com/cunejoe' },
-        { name: 'linkedin', link: 'https://linkedin.com/in/lianabisuna' },
-        { name: 'instagram', link: 'https://www.instagram.com/codestring' }
-      ],
+        { name: 'Github', text: 'Gi', link: 'https://github.com/cunejoe' },
+        { name: 'LinkedIn', text: 'In', link: 'https://linkedin.com/in/lianabisuna' },
+        { name: 'Instagram', text: 'Ig', link: 'https://www.instagram.com/codestring' }
+      ]
     }),
 
     props: {

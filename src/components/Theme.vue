@@ -2,6 +2,7 @@
   <v-menu
     absolute
     offset-y
+    tile
   >
     <template v-slot:activator="{ on, attrs }">
       <v-btn

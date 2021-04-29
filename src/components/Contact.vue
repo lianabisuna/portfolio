@@ -6,6 +6,7 @@
       offset-y
       :left="lg"
       :min-width="sm?'100vw':''"
+      tile
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
@@ -23,6 +24,7 @@
         :max-height="sm?'85vh':'80vh'"
         class="overflow-hidden"
         style="z-index: 2;"
+        tile
       >
         <v-card-title>
           <v-row>
