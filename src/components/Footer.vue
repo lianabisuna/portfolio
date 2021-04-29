@@ -114,6 +114,7 @@
     ],
 
     data: () => ({
+      menu: false,
       email: 'lianabisuna@gmail.com',
       target: true,
       icons: [
