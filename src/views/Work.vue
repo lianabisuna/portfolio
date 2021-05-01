@@ -103,7 +103,7 @@
           year: '2019',
           image: "spelltacular",
           site: 'https://spelltacular.netlify.app',
-          code: '',
+          code: 'https://github.com/lianabisuna/spelltacular',
           component: ''
         },
         {

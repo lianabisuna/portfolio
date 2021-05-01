@@ -118,10 +118,10 @@
       email: 'lianabisuna@gmail.com',
       target: true,
       icons: [
-        { name: 'Github', text: 'Gi', link: 'https://github.com/cunejoe' },
-        { name: 'LinkedIn', text: 'In', link: 'https://linkedin.com/in/lianabisuna' },
-        { name: 'Instagram', text: 'Ig', link: 'https://www.instagram.com/codestring' }
-      ]
+        { name: 'github', link: 'https://github.com/lianabisuna' },
+        { name: 'linkedin', link: 'https://linkedin.com/in/lianabisuna' },
+        { name: 'instagram', link: 'https://www.instagram.com/codestring' }
+      ],
     }),
 
     props: {
