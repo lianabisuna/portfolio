@@ -192,7 +192,6 @@
         text: ''
       },
       sending: false,
-      menu: false,
       error: '',
       rules: {
         required: v => !!v || 'This field is required',
@@ -223,6 +222,13 @@
           await this.$refs.form.resetValidation();
           this.menu = false;
         }
+      }
+    },
+
+    computed: {
+      menu: {
+        get() { return this.$store.getters['main/contact'] },
+        set(val) { this.$store.commit('main/setContact', val) }
       }
     },
 

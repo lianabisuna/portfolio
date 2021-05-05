@@ -151,15 +151,15 @@
   }
 
   .text-70 {
-    font-size: 70%;
+    font-size: 70% !important;
   }
 
   .text-40 {
-    font-size: 40%;
+    font-size: 40% !important;
   }
 
   .text-90 {
-    font-size: 90%;
+    font-size: 90% !important;
   }
 
   .letter-spacing-3 {
@@ -204,6 +204,11 @@
     background-size: cover;
   }
 
+  .paragraph-caption {
+    font-size: 12px;
+    color: var(--app-font-color);
+  }
+
   .paragraph-big {
     font-size: 20px;
     color: var(--app-font-color);
@@ -217,13 +222,13 @@
   .paragraph-1 {
     font-size: 21px;
     font-weight: 600;
-    color: var(--app-font-color);
+    color: var(--app-font-color) !important;
   }
 
   .paragraph-2 {
     font-size: 22px;
     font-weight: 600;
-    color: var(--app-font-color);
+    color: var(--app-font-color) !important;
   }
 
   .paragraph-3 {

@@ -2,7 +2,7 @@
   <div>
     <div
       :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]"
-      :style="{ backgroundImage: 'url(' + require(`@/assets/about-${drk?'light':'dark'}.png`) + ')' }"
+      :style="{ backgroundImage: 'url(' + require(`@/assets/work.png`) + ')' }"
     >
       <div class="inner-wrapper">
         <div class="d-flex align-center justify-center">
@@ -104,7 +104,7 @@
           image: "spelltacular",
           site: 'https://spelltacular.netlify.app',
           code: 'https://github.com/lianabisuna/spelltacular',
-          component: ''
+          component: 'ProjectSpelltacular'
         },
         {
           name: "Summoner's Fate",
@@ -112,8 +112,8 @@
           year: '2019',
           image: "summoners-fate",
           site: 'https://summoners-fate.netlify.app',
-          code: '',
-          component: ''
+          code: 'https://github.com/lianabisuna/summoners-fate',
+          component: 'ProjectSummoners'
         },
         {
           name: 'K! Card',
@@ -121,8 +121,8 @@
           year: '2020',
           image: "kcard",
           site: 'https://kcard.netlify.app',
-          code: '',
-          component: ''
+          code: 'https://github.com/lianabisuna/kcard',
+          component: 'ProjectKcard'
         }
       ],
       designs: [

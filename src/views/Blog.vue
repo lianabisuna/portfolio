@@ -2,7 +2,7 @@
   <div>
     <div
       :class="[{ 'bg-cover':sm, 'bg-contain':lg }, 'banner' ]"
-      :style="{ backgroundImage: 'url(' + require(`@/assets/about-${drk?'light':'dark'}.png`) + ')' }"
+      :style="{ backgroundImage: 'url(' + require(`@/assets/blog.png`) + ')' }"
     >
       <div class="inner-wrapper">
         <div class="d-flex align-center justify-center">

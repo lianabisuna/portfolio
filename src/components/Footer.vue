@@ -33,14 +33,14 @@
                   </v-btn>
                   <a
                     v-if="menu"
-                    href="mailto:lianabisuna@gmail.com"
+                    :href="`mailto:${email}`"
                     target="_blank"
                     v-bind="attrs"
                     v-on="on"
                     class="pl-2 paragraph-2"
                     @click.stop
                   >
-                    lianabianca@gmail.com
+                    {{ email }}
                   </a>
                 </div>
               </div>
@@ -63,17 +63,17 @@
             </v-list>
           </v-menu>
 
-          <h4 v-else :class="[ 'text-uppercase', { 'text-90':sm } ]">
+          <div v-else :class="[ 'text-uppercase', { 'text-90':sm } ]">
             <a
               v-for="(icon,key) in icons"
               :key="key"
               :href="icon.link"
-              :class="[ key+1!==icons.length?'mr-2':'' ]"
+              :class="[ 'paragraph-1', { 'text-90':sm } , key+1!==icons.length?'mr-2':'' ]"
               target="_blank"
             >
               {{ icon.name }}
             </a>
-          </h4>
+          </div>
         </v-col>
 
         <v-col cols="2" sm="2" md="4" lg="4" xl="4" :class="[ { 'text-center':lg, 'text-end':sm } ]">
@@ -89,11 +89,11 @@
 
         <v-col cols="12" sm="4" md="4" lg="4" xl="4" :class="[ { 'text-end':lg, 'text-center':sm } ]">
           <a :href="`mailto:${email}`">
-            <h4 v-if="!target&&!float">lianabisuna@gmail.com</h4>
+            <div class="paragraph" v-if="!target&&!float">{{ email }}</div>
           </a>
           <div
             v-if="!target&&!float"
-            class="text-caption"
+            class="paragraph-caption"
           >
             {{ new Date().getFullYear() }} &copy; DESIGNED & CREATED BY LIANA BISUÑA
           </div>
@@ -118,10 +118,10 @@
       email: 'lianabisuna@gmail.com',
       target: true,
       icons: [
-        { name: 'github', link: 'https://github.com/lianabisuna' },
-        { name: 'linkedin', link: 'https://linkedin.com/in/lianabisuna' },
-        { name: 'instagram', link: 'https://www.instagram.com/codestring' }
-      ],
+        { name: 'Github', text: 'Gi', link: 'https://github.com/lianabisuna' },
+        { name: 'LinkedIn', text: 'In', link: 'https://linkedin.com/in/lianabisuna' },
+        { name: 'Instagram', text: 'Ig', link: 'https://www.instagram.com/codestring' }
+      ]
     }),
 
     props: {
@@ -154,7 +154,7 @@
         /* user has scrolled on specific div */
         var elementTarget = document.getElementById("contact-link");
         var target = elementTarget.offsetTop + elementTarget.offsetHeight;
-        var targetHeight = target - (target/2);
+        var targetHeight = target - (target/3);
         var scrollHeight = window.scrollY
 
         if (targetHeight >= scrollHeight) {

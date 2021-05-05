@@ -1,7 +1,7 @@
 <template>
   <v-hover v-slot="{ hover }">
     <span
-      :class="[ 'cursor-pointer font-weight-bold text-uppercase hvr-float', { 'underline':hover } ]"
+      :class="[ 'cursor-pointer font-weight-bold text-uppercase', { 'underline':hover } ]"
       :style="{ borderColor:color, color:color }"
     >
       {{ value(hover) }}

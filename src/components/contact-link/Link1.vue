@@ -10,6 +10,7 @@
         outlined
         dark
         x-large
+        @click="contact=true"
       >
         Let's collaborate
         <v-icon right>mdi-arrow-right</v-icon>
@@ -20,6 +21,13 @@
 
 <script>
   export default {
-    name: 'Link1'
+    name: 'Link1',
+
+    computed: {
+      contact: {
+        get() { return this.$store.getters['main/contact'] },
+        set(val) { this.$store.commit('main/setContact', val) }
+      }
+    }
   }
 </script>

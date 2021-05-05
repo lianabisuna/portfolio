@@ -7,9 +7,25 @@
     <v-col cols="12">
       <div class="d-flex justify-center">
         <v-hover v-slot="{ hover }">
-          <div :class="[ 'bottom-line d-inline-block', { 'title-large':lg, 'title-small':sm} ]">
-            <span :class="{ 'text-gradient':hover }">Let's collaborate</span><span v-if="!hover">.</span>
-            <v-icon v-if="hover" x-large right :color="drk?'white':'black'">mdi-arrow-right</v-icon>
+          <div
+            @click="contact=true"
+            :class="[
+              'bottom-line d-inline-block cursor-pointer',
+              { 'title-large':lg, 'title-small':sm}
+            ]"
+          >
+            <span :class="{ 'text-gradient':hover }">
+              Let's collaborate
+            </span>
+            <span v-if="!hover">.</span>
+            <v-icon
+              v-if="hover"
+              x-large
+              right
+              :color="drk?'white':'black'"
+            >
+              mdi-arrow-right
+            </v-icon>
           </div>
         </v-hover>
       </div>
@@ -19,7 +35,14 @@
 
 <script>
   export default {
-    name: 'Link2'
+    name: 'Link2',
+
+    computed: {
+      contact: {
+        get() { return this.$store.getters['main/contact'] },
+        set(val) { this.$store.commit('main/setContact', val) }
+      }
+    }
   }
 </script>
 
