@@ -17,6 +17,7 @@
           :src="require(`@/assets/logo-${drk?'light':'dark'}.png`)"
           alt="logo"
           :width="expand?'100':'50'"
+          :height="expand?'100':'50'"
           absolute
           fixed
         ></v-img>

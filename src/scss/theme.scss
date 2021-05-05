@@ -1,10 +1,10 @@
 :root {
-  --app-background-color: #000000;
+  --app-background-color: #141318;
   --app-accent-color: #92959A;
   --app-font-color: #ffffff;
   --text-large-color: #ffffff;
   --text-medium-color: #ffffff;
-  --text-stroke-inner-color: #000000;
+  --text-stroke-inner-color: #141318;
   --text-stroke-outer-color: #ffffff;
   --a-text-float-color: linear-gradient(to right, #689727, #a65f56);
   --b-text-float-color: linear-gradient(to right, #a65f56, #7927b2);
@@ -12,12 +12,12 @@
 }
 
 [theme="dark"] {
-  --app-background-color: #000000;
+  --app-background-color: #141318;
   --app-accent-color: #92959A;
   --app-font-color: #ffffff;
   --text-large-color: #ffffff;
   --text-medium-color: #ffffff;
-  --text-stroke-inner-color: #000000;
+  --text-stroke-inner-color: #141318;
   --text-stroke-outer-color: #ffffff;
   --a-text-float-color: linear-gradient(to right, #689727, #fdbb2d);
   --b-text-float-color: linear-gradient(to right, #fdbb2d, #fb3182);
@@ -27,7 +27,7 @@
 [theme="green"] {
   --app-background-color: #588061;
   --app-accent-color: #9e9e9e;
-  --app-font-color: #000000;
+  --app-font-color: #141318;
   --text-large-color: #f9ad81;
   --text-medium-color: #143221;
   --text-stroke-inner-color: #588061;
@@ -40,7 +40,7 @@
 [theme="pink"] {
   --app-background-color: #fab7ae;
   --app-accent-color: #808080;
-  --app-font-color: #000000;
+  --app-font-color: #141318;
   --text-large-color: #1e140a;
   --text-medium-color: #77a53a;
   --text-stroke-inner-color: #fab7ae;

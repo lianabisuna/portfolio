@@ -15,7 +15,7 @@
             @click="scrollToId('content')"
             style="z-index: 1;"
           >
-            <v-icon :color="drk?'white':'black'">mdi-chevron-down</v-icon>
+            <v-icon :color="drk?'white':'#141318'">mdi-chevron-down</v-icon>
           </v-btn>
         </div>
       </div>

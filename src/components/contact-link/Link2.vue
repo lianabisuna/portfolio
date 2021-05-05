@@ -22,7 +22,7 @@
               v-if="hover"
               x-large
               right
-              :color="drk?'white':'black'"
+              :color="drk?'white':'#141318'"
             >
               mdi-arrow-right
             </v-icon>

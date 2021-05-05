@@ -85,7 +85,7 @@
   }
 
   .theme-dark {
-    background-color: #000000;
+    background-color: #141318;
   }
 
   .theme-green {

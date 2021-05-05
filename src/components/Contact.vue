@@ -14,7 +14,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          <v-icon size="30" :color="drk?'white':'black'">mdi-email-outline</v-icon>
+          <v-icon size="30" :color="drk?'white':'#141318'">mdi-email-outline</v-icon>
         </v-btn>
       </template>
 

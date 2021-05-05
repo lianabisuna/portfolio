@@ -29,7 +29,7 @@
                     v-bind="attrs"
                     v-on="on"
                   >
-                    <v-icon size="30" :color="drk?'white':'black'">mdi-web</v-icon>
+                    <v-icon size="30" :color="drk?'white':'#141318'">mdi-web</v-icon>
                   </v-btn>
                   <a
                     v-if="menu"
@@ -83,7 +83,7 @@
             x-large
             @click="scrollToTop"
           >
-            <v-icon :color="drk?'white':'black'">mdi-chevron-up</v-icon>
+            <v-icon :color="drk?'white':'#141318'">mdi-chevron-up</v-icon>
           </v-btn>
         </v-col>
 
